@@ -1,3 +1,7 @@
+from flask import render_template
 class HomeController:
-    def index():
-        return "this is the function from class"
+    def __init__(self) -> None:
+        self.name = "this name"
+        pass
+    def index(self):
+        return render_template('pages/index.html', title="home")
