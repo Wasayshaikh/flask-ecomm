@@ -1,7 +1,8 @@
-from flask import render_template
-class HomeController:
+from .Controller import Controller
+class HomeController(Controller): 
     def __init__(self) -> None:
         self.name = "this name"
         pass
     def index(self):
-        return render_template('pages/index.html', title="home")
+        data = {'title': "homes"}
+        return super().render('pages/index.html', data)
