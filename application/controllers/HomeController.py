@@ -5,4 +5,4 @@ class HomeController(Controller):
         pass
     def index(self):
         data = {'title': "homes"}
-        return super().render('pages/index.html', data)
+        return super().render('index', data)
