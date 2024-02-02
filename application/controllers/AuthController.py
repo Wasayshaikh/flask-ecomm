@@ -9,6 +9,14 @@ class AuthController(Controller):
         if request_type == "GET":
             data = {"title": "Login"}
             return super().render("auth/login", data)
+        else:
+            username = super().request().form['username']
+            password = super().request().form['password']
+            dataUser = session.query(ModelClasses.Users).where(ModelClasses.Users.username == username).where(ModelClasses.Users.password == password).all()
+            print(dataUser)
+            data = {"users" : dataUser, "title":"login"}
+            return super().render("index",data)
+
     def register(self):
         request_type = super().request().method
         if request_type == "GET":
