@@ -1,4 +1,4 @@
-from flask import render_template, request, redirect, url_for
+from flask import render_template, request, redirect, url_for,flash,session
 class Controller:
     def __init__(self) -> None:
        pass 
@@ -11,3 +11,9 @@ class Controller:
         return request
     def redirect(self, blue_print):
         return redirect(url_for(blue_print))
+    def flash_error(self,error):
+        flash(error)
+        pass
+    def sessions(self, data):
+        session
+        pass
