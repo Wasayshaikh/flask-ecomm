@@ -13,6 +13,6 @@ def create_session(db_uri):
     Session = sessionmaker(bind=engine)
     return Session()
 
-#database_uri = 'postgresql://postgres:1234@localhost/blog_post'
-database_uri = 'mysql+mysqlconnector://root:1234@localhost/blog_post'
+database_uri = 'postgresql://postgres:1234@localhost/blog_post'
+# database_uri = 'mysql+mysqlconnector://root:1234@localhost/blog_post'
 databaseSession = create_session(database_uri)
