@@ -8,10 +8,18 @@
   <main>
 
     <div class="login-block">
-      <img src="http://scanfcode.com/wp-content/uploads/2017/09/cropped-Untitled-1.png" alt="Scanfcode">
+      <!-- <img src="http://scanfcode.com/wp-content/uploads/2017/09/cropped-Untitled-1.png" alt="Scanfcode"> -->
       <h1>Register Now</h1>
-
-      <form action="_{{url_for('web.register')}}" method="post">
+      {% with messages = get_flashed_messages(with_categories=true) %}
+      {% if messages %}
+      {% for category, message in messages %}
+      <div class="alert alert-{{ category }}">
+        {{ message }}
+      </div>
+      {% endfor %}
+      {% endif %}
+      {% endwith %}
+      <form action="{{url_for('web.register')}}" method="post">
         <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
         <div class="form-group">
           <div class="input-group">
@@ -19,7 +27,7 @@
             <input type="text" class="form-control" name="username" placeholder="Enter Username">
           </div>
         </div>
-        
+
         <hr class="hr-xs">
 
 
@@ -29,29 +37,29 @@
             <input type="email" class="form-control" name="email" placeholder="Your email address">
           </div>
         </div>
-        
+
         <hr class="hr-xs">
         <div class="form-group">
-            <div class="input-group">
-              <span class="input-group-addon"><i class="fa fa-user ti-user"></i></span>
-              <input type="text" class="form-control" name="first_name" placeholder="Your first name">
-            </div>
+          <div class="input-group">
+            <span class="input-group-addon"><i class="fa fa-user ti-user"></i></span>
+            <input type="text" class="form-control" name="first_name" placeholder="Your first name">
           </div>
-          
-          <hr class="hr-xs">
-          <div class="form-group">
-            <div class="input-group">
-              <span class="input-group-addon"><i class="fa fa-user ti-user"></i></span>
-              <input type="text" class="form-control" name="last_name" placeholder="Your last name">
-            </div>
+        </div>
+
+        <hr class="hr-xs">
+        <div class="form-group">
+          <div class="input-group">
+            <span class="input-group-addon"><i class="fa fa-user ti-user"></i></span>
+            <input type="text" class="form-control" name="last_name" placeholder="Your last name">
           </div>
-          
-          <hr class="hr-xs">
+        </div>
+
+        <hr class="hr-xs">
 
         <div class="form-group">
           <div class="input-group">
             <span class="input-group-addon"><i class="fa fa-lock ti-unlock"></i></span>
-            <input type="password" class="form-control" placeholder="Choose a password">
+            <input type="password" name="password" class="form-control" placeholder="Choose a password">
           </div>
         </div>
 
@@ -75,5 +83,5 @@
 
   </main>
 </div>
-  
+
 {% endblock %}
