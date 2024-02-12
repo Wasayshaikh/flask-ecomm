@@ -1,4 +1,4 @@
-from .Controller import Controller
+from application.controllers.Controller import Controller
 from application.models import Users
 from application.models import databaseSession
 from flask import session
