@@ -11,3 +11,4 @@ web.add_url_rule('/logout',view_func=auth.logout,methods=["GET","POST"])
 
 #dashboard Routes
 web.add_url_rule('/dashboard',view_func=dashboard.dashboard, methods=['GET',"POST"])
+web.add_url_rule("/dashboard/products", view_func=product.products, methods=["GET","POST"])
