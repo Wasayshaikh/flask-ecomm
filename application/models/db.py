@@ -6,13 +6,15 @@ from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
 
 Base  = declarative_base()
-
-def create_session(db_uri):
-    engine = create_engine(db_uri)
+database_uri = 'postgresql://postgres:1234@localhost/blog_post'
+# database_uri = 'mysql+mysqlconnector://root:1234@localhost/blog_post'
+engine = create_engine(database_uri)
+def create_tables():
     Base.metadata.create_all(engine)
+    pass
+def database_session():
     Session = sessionmaker(bind=engine)
     return Session()
 
-database_uri = 'postgresql://postgres:1234@localhost/blog_post'
-# database_uri = 'mysql+mysqlconnector://root:1234@localhost/blog_post'
-databaseSession = create_session(database_uri)
+
+databaseSession = database_session()
