@@ -25,6 +25,7 @@ class AuthController(Controller):
             else:
                 self.flash_error("Invalid credentials")
                 return self.redirect("web.login")
+        return 0
 
     def register(self):
         request_type = self.request().method
@@ -53,6 +54,8 @@ class AuthController(Controller):
                 print("Error: Data could not be stored in the database due to integrity constraints.")
                 self.flash_error("username or email already exist")
                 return self.redirect('web.register')
+        return 0
+
     def logout(self):
         request_type=self.request().method
         if request_type == "GET":
@@ -63,3 +66,5 @@ class AuthController(Controller):
                 return self.redirect('web.index')
         else:
             return self.redirect('web.index')
+        return 0
+    
