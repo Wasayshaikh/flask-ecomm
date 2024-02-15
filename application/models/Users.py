@@ -1,7 +1,6 @@
 from application.models.db import Base
 from sqlalchemy import Column,String, Integer,BigInteger
-
-
+from sqlalchemy.orm import relationship
 
 
 class Users(Base):
@@ -13,3 +12,4 @@ class Users(Base):
     first_name= Column(String(50), nullable=True)
     last_name = Column(String(50), nullable=True)
     role= Column(BigInteger, nullable=False, default=0 )
+    products = relationship('Products', back_populates='users')

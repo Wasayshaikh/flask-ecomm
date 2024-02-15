@@ -8,4 +8,5 @@ class ProductMetaData(Base):
     title=Column(String(100), nullable=False)
     thumbnail = Column(Text, nullable=False)
     images = Column(Text, nullable=True)
+    description = Column(Text, nullable=True)
     product = relationship("Products", back_populates="product_metadata")
