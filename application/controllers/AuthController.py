@@ -21,7 +21,7 @@ class AuthController(Controller):
             dataUser = databaseSession.query(Users).filter(Users.username == username,Users.password == password).first()
             session['auth_user'] = {"username": dataUser.username, "id":dataUser.id, "email":dataUser.email}
             if dataUser:
-                return self.redirect("web.index")
+                return self.redirect("dashboard.dashboard")
             else:
                 self.flash_error("Invalid credentials")
                 return self.redirect("web.login")
