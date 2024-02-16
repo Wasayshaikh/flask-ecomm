@@ -16,7 +16,7 @@ class ProductController(Controller):
         return self.render("dashboard/product/product", data)
     
     @check_auth
-    def add_product(self):
+    def add_products(self):
         if self.request().method == "POST":
             upload_file_path = self.upload_file()
             if "status" not in upload_file_path:
@@ -47,7 +47,7 @@ class ProductController(Controller):
         return self.render("dashboard/product/addProduct", data)
     
     @check_auth
-    def edit_product(self, code):
+    def edit_products(self, code):
         if self.request().method == "POST":
             upload_file_path = self.upload_file()
             title = self.request().form["title"]
