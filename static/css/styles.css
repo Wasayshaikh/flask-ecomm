@@ -186,3 +186,9 @@
 {
   background-color:#007bb6
 }
+.owl-theme div{
+  height: 100%;
+}
+.owl-dots,.owl-nav{
+  height: auto!important;
+}
