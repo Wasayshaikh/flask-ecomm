@@ -19,7 +19,7 @@ class AuthController(Controller):
             password = self.request().form['password']
             #dataUser = databaseSession.query(ModelClasses.Users).where(ModelClasses.Users.username == username).where(ModelClasses.Users.password == password)
             dataUser = databaseSession.query(Users).filter(Users.username == username,Users.password == password).first()
-            # session['auth_user'] = {"username": dataUser.username, "id":dataUser.id, "email":dataUser.email}
+            session['auth_user'] = {"username": dataUser.username, "id":dataUser.id, "email":dataUser.email}
             if dataUser:
                 return self.redirect("web.index")
             else:
