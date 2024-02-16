@@ -47,7 +47,7 @@
                             <td style="text-align: center;">{{product.users.first_name}}</td>
                             <td style="text-align: center;">{{product.stocks}}</td>
                             <td style="text-align: center;">{{product.price}}</td>
-                            <td style="text-align: center;"><a href="{{url_for("dashboard.edit_product", code=product.product_code)}}"><button class="btn bg-primary">Edut</button></a></td>
+                            <td style="text-align: center;"><a href="{{url_for("dashboard.edit_product", code=product.product_code)}}"><button class="btn bg-primary">Edit</button></a></td>
                         </tr>
                         {% endfor %}
                         {% endif %}
