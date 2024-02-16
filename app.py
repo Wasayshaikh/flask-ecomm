@@ -2,11 +2,12 @@ from flask import Flask
 from routers.routes import web,dashboardRoutes
 from application.models import create_tables,database_uri
 from flask_wtf.csrf import CSRFProtect
+from application.helper import env
+
 app = Flask(__name__)
-
-
-app.secret_key = "123456789"
-app.config['SECRET_KEY'] = 'your_secret_key'
+SECRET_KEY = env("SECRET_KEY")
+app.secret_key = SECRET_KEY
+app.config['SECRET_KEY'] = SECRET_KEY
 create_tables()
 # Create a session to interact with the database
 
