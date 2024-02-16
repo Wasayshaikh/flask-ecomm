@@ -5,7 +5,7 @@ class DashboardController(Controller):
         self.name = "this name"
         pass
     
-    #@check_auth
+    @check_auth
     def dashboard(self):
         data = {'title': "homes"}
         return self.render('dashboard/home', data)
