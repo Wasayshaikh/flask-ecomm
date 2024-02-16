@@ -33,40 +33,40 @@
                         <div class="form-group">
                             <label for="exampleInput">Title</label>
                             <input type="text" value="{{product.product_metadata.title}}" name="title"
-                                class="form-control" id="exampleInput" placeholder="Enter Product Title">
+                                class="form-control" id="exampleInput" placeholder="Enter Product Title" required>
                         </div>
                         <div class="form-group">
                             <label for="exampleInput2">Slug</label>
                             <input type="text" value="{{product.slug}}" name="slug" class="form-control"
-                                id="exampleInput2" placeholder="Enter Product Slug">
+                                id="exampleInput2" placeholder="Enter Product Slug" required>
                         </div>
                         <div class="form-group">
                             <label for="exampleInput3">Stocks</label>
                             <input type="number" value="{{product.stocks}}" name="stock" class="form-control"
-                                id="exampleInput3" placeholder="Enter Product Stocks">
+                                id="exampleInput3" placeholder="Enter Product Stocks" required>
                         </div>
                         <div class="form-group">
                             <label for="exampleInput4">Price</label>
                             <input type="number" value="{{product.price}}" name="price" class="form-control"
-                                id="exampleInput4" placeholder="Enter Product price">
+                                id="exampleInput4" placeholder="Enter Product price" required>
                         </div>
                         <div class="form-group">
                             <label>Textarea</label>
-                            <textarea name="description" class="form-control" rows="3"
-                                placeholder="Enter ...">{{product.product_metadata.description}}</textarea>
+                            <textarea name="description" class="form-control" rows="3" placeholder="Enter ..."
+                                required>{{product.product_metadata.description}}</textarea>
                         </div>
-                        <!-- <div class="form-group">
-                <label for="exampleInputFile">File input</label>
-                <div class="input-group">
-                  <div class="custom-file">
-                    <input name="image" type="file" class="custom-file-input" id="exampleInputFile">
-                    <label class="custom-file-label" for="exampleInputFile">Choose file</label>
-                  </div>
-                  <div class="input-group-append">
-                    <span class="input-group-text">Upload</span>
-                  </div>
-                </div>
-              </div> -->
+                        <div class="form-group">
+                            <label for="exampleInputFile">File input</label>
+                            <div class="input-group">
+                                <div class="custom-file">
+                                    <input name="image" type="file" class="custom-file-input" id="exampleInputFile" >
+                                    <label class="custom-file-label" for="exampleInputFile">Choose file</label>
+                                </div>
+                                <div class="input-group-append">
+                                    <span class="input-group-text">Upload</span>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                     <!-- /.card-body -->
 
