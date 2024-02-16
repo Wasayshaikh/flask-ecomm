@@ -2,24 +2,30 @@
 
 {% block content %}
 
-<div class="owl-carousel owl-theme">
-    <div class="item"><h4>1</h4></div>
-    <div class="item"><h4>2</h4></div>
-    <div class="item"><h4>3</h4></div>
-    <div class="item"><h4>4</h4></div>
-    <div class="item"><h4>5</h4></div>
-    <div class="item"><h4>6</h4></div>
-    <div class="item"><h4>7</h4></div>
-    <div class="item"><h4>8</h4></div>
-    <div class="item"><h4>9</h4></div>
-    <div class="item"><h4>10</h4></div>
-    <div class="item"><h4>11</h4></div>
-    <div class="item"><h4>12</h4></div>
+<div  style="height: 630px;">
+    <div class="owl-carousel owl-theme" style="height: 80%;">
+        <div class="item"><img src="{{url_for('static',filename="img/img1.jpg")}}" style="height: 100%;" alt=""></div>
+        <div class="item"><img src="{{url_for('static',filename="img/img2.jpg")}}" style="height: 100%;" alt=""><</div>
+        <div class="item"><img src="{{url_for('static',filename="img/img3.jpg")}}" style="height: 100%;" alt=""><</div>
+        <div class="item"><img src="{{url_for('static',filename="img/img1.jpg")}}" style="height: 100%;" alt=""><</div>
+    </div>
 </div>
+
 <div>
-    categories
-</div>
-<div>
-    new arrival
+    <div style="display: flex; flex-wrap: wrap;padding: 10px 20px;">
+        {% for product in products %}
+        <div style="width: 33.33%;padding: 0 12px;">
+            <div style=" border: solid 1px gray; border-radius: 5px; overflow: hidden; box-shadow: 3px 0px 5px;">
+                <div style="height: 200px;">
+                    <img src="{{url_for('static',filename=product.product_metadata.thumbnail)}}" style="height: 100%;width: 100%;" alt=""></div>
+                    <div style="padding: 15px 5px;">
+                        <p>{{product.product_metadata.title}}</p>
+                        <p>${{product.price}}</p>
+                    </div>
+                </div>
+            
+        </div>
+        {% endfor %}
+    </div>
 </div>
 {% endblock %}
