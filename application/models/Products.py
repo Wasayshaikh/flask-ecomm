@@ -6,7 +6,7 @@ class Products(Base):
     id= Column(Integer,primary_key=True, autoincrement=True )
     product_code = Column(String(100), unique=True)
     slug= Column(String(100), nullable=False, unique=True)
-    user_id= Column(BigInteger, ForeignKey("users.id"), nullable=True)
+    user_id= Column(Integer, ForeignKey("users.id"), nullable=True)
     price= Column(BigInteger, nullable=False)
     is_active= Column(BigInteger, default=0)
     stocks= Column(BigInteger, nullable=True)
