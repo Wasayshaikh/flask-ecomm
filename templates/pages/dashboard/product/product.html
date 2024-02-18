@@ -43,7 +43,7 @@
                         <tr>
                             <td style="text-align: center;">{{product.product_code}}</td>
                             <td style="text-align: center;">{{product.product_metadata.title}}</td>
-                            <td style="text-align: center;">{{product.product_metadata.thumbnail}}</td>
+                            <td style="text-align: center;"><img style="width: 100px;" src="{{url_for("static",filename=product.product_metadata.thumbnail)}}" alt=""></td>
                             <td style="text-align: center;">{{product.users.first_name}}</td>
                             <td style="text-align: center;">{{product.stocks}}</td>
                             <td style="text-align: center;">{{product.price}}</td>
